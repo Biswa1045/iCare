@@ -93,49 +93,66 @@
                    android:layout_width="match_parent"
                    android:foreground="?android:attr/selectableItemBackground"
                    android:clickable="true"
+                   android:backgroundTint="@color/light_back"
                    android:layout_height="130dp"
                    app:cardCornerRadius="20dp">
                    <LinearLayout
-
                        android:layout_width="match_parent"
                        android:layout_height="match_parent"
-                       android:background="@color/light_back"
-                       android:orientation="horizontal">
+                       android:orientation="vertical">
                        <LinearLayout
-                           android:gravity="center"
-                           android:layout_weight="1.8"
                            android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="vertical"
-                          >
-                           <ImageView
+                           android:layout_height="100dp"
+                           android:background="@color/light_back"
+                           android:orientation="horizontal">
+                           <LinearLayout
+                               android:gravity="center"
+                               android:layout_weight="1.8"
                                android:layout_width="match_parent"
-                               android:layout_height="50dp"
-                               android:src="@drawable/temperature"
-                               android:layout_gravity="center_vertical"
-                              />
+                               android:layout_height="match_parent"
+                               android:orientation="vertical"
+                               >
+                               <ImageView
+                                   android:layout_width="match_parent"
+                                   android:layout_height="50dp"
+                                   android:src="@drawable/temperature"
+                                   android:layout_gravity="center_vertical"
+                                   />
+                               <TextView
+                                   android:layout_width="match_parent"
+                                   android:textAlignment="center"
+                                   android:layout_height="wrap_content"
+                                   android:text="Temperature"
+                                   android:textStyle="bold"
+                                   android:textSize="18dp"
+                                   android:textColor="@color/sky"
+                                   />
+                           </LinearLayout>
                            <TextView
+                               android:gravity="center"
                                android:layout_width="match_parent"
-                               android:textAlignment="center"
-                               android:layout_height="wrap_content"
-                               android:text="Temperature"
+                               android:layout_height="match_parent"
+                               android:layout_weight="1"
+                               android:textColor="@color/white"
+                               android:text=""
+                               android:id="@+id/temp_txt"
+                               android:textSize="30dp"
                                android:textStyle="bold"
-                               android:textSize="18dp"
-                               android:textColor="@color/sky"
                                />
+
                        </LinearLayout>
                        <TextView
-                           android:gravity="center"
+                           android:paddingHorizontal="10dp"
+                           android:textAlignment="center"
                            android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:layout_weight="1"
-                           android:textColor="@color/white"
+                           android:layout_height="wrap_content"
                            android:text=""
-                           android:id="@+id/temp_txt"
-                           android:textSize="30dp"
-                           android:textStyle="bold"
-                           />
+                           android:id="@+id/temp_msg"
+                           android:textColor="@color/white"
+                           android:textSize="14dp"
+                           android:textStyle="bold"/>
                    </LinearLayout>
+
 
                </androidx.cardview.widget.CardView>
                <androidx.cardview.widget.CardView
@@ -145,49 +162,66 @@
                    android:layout_width="match_parent"
                    android:foreground="?android:attr/selectableItemBackground"
                    android:clickable="true"
+                   android:backgroundTint="@color/light_back"
                    android:layout_height="130dp"
                    app:cardCornerRadius="20dp">
                    <LinearLayout
-
                        android:layout_width="match_parent"
                        android:layout_height="match_parent"
-                       android:background="@color/light_back"
-                       android:orientation="horizontal">
+                       android:orientation="vertical">
                        <LinearLayout
-                           android:gravity="center"
-                           android:layout_weight="1.8"
+
                            android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="vertical"
-                           >
-                           <ImageView
+                           android:layout_height="100dp"
+                           android:background="@color/light_back"
+                           android:orientation="horizontal">
+                           <LinearLayout
+                               android:gravity="center"
+                               android:layout_weight="1.8"
                                android:layout_width="match_parent"
-                               android:layout_height="50dp"
-                               android:src="@drawable/heartbeat"
-                               android:layout_gravity="center_vertical"
-                               />
+                               android:layout_height="match_parent"
+                               android:orientation="vertical"
+                               >
+                               <ImageView
+                                   android:layout_width="match_parent"
+                                   android:layout_height="50dp"
+                                   android:src="@drawable/heartbeat"
+                                   android:layout_gravity="center_vertical"
+                                   />
+                               <TextView
+                                   android:layout_width="match_parent"
+                                   android:textAlignment="center"
+                                   android:layout_height="wrap_content"
+                                   android:text="Heart Beat"
+                                   android:textStyle="bold"
+                                   android:textSize="18dp"
+                                   android:textColor="@color/sky"
+                                   />
+                           </LinearLayout>
                            <TextView
+                               android:gravity="center"
                                android:layout_width="match_parent"
-                               android:textAlignment="center"
-                               android:layout_height="wrap_content"
-                               android:text="Heart Beat"
+                               android:layout_height="match_parent"
+                               android:layout_weight="1"
+                               android:textColor="@color/white"
+                               android:text=""
+                               android:id="@+id/heart_txt"
+                               android:textSize="30dp"
                                android:textStyle="bold"
-                               android:textSize="18dp"
-                               android:textColor="@color/sky"
                                />
                        </LinearLayout>
                        <TextView
-                           android:gravity="center"
+                           android:paddingHorizontal="10dp"
+                           android:textAlignment="center"
                            android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:layout_weight="1"
-                           android:textColor="@color/white"
+                           android:layout_height="wrap_content"
                            android:text=""
-                           android:id="@+id/heart_txt"
-                           android:textSize="30dp"
-                           android:textStyle="bold"
-                           />
+                           android:id="@+id/bpm_msg"
+                           android:textColor="@color/white"
+                           android:textSize="14dp"
+                           android:textStyle="bold"/>
                    </LinearLayout>
+
 
                </androidx.cardview.widget.CardView>
                <androidx.cardview.widget.CardView
@@ -197,49 +231,66 @@
                    android:layout_width="match_parent"
                    android:foreground="?android:attr/selectableItemBackground"
                    android:clickable="true"
+                   android:backgroundTint="@color/light_back"
                    android:layout_height="130dp"
                    app:cardCornerRadius="20dp">
                    <LinearLayout
-
                        android:layout_width="match_parent"
                        android:layout_height="match_parent"
-                       android:background="@color/light_back"
-                       android:orientation="horizontal">
+                       android:orientation="vertical">
                        <LinearLayout
-                           android:gravity="center"
-                           android:layout_weight="1.8"
+
                            android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:orientation="vertical"
-                           >
-                           <ImageView
+                           android:layout_height="100dp"
+                           android:background="@color/light_back"
+                           android:orientation="horizontal">
+                           <LinearLayout
+                               android:gravity="center"
+                               android:layout_weight="1.8"
                                android:layout_width="match_parent"
-                               android:layout_height="50dp"
-                               android:src="@drawable/oxygen"
-                               android:layout_gravity="center_vertical"
-                               />
+                               android:layout_height="match_parent"
+                               android:orientation="vertical"
+                               >
+                               <ImageView
+                                   android:layout_width="match_parent"
+                                   android:layout_height="50dp"
+                                   android:src="@drawable/oxygen"
+                                   android:layout_gravity="center_vertical"
+                                   />
+                               <TextView
+                                   android:layout_width="match_parent"
+                                   android:textAlignment="center"
+                                   android:layout_height="wrap_content"
+                                   android:text="Oximeter"
+                                   android:textStyle="bold"
+                                   android:textSize="18dp"
+                                   android:textColor="@color/sky"
+                                   />
+                           </LinearLayout>
                            <TextView
+                               android:gravity="center"
                                android:layout_width="match_parent"
-                               android:textAlignment="center"
-                               android:layout_height="wrap_content"
-                               android:text="Oximeter"
+                               android:layout_height="match_parent"
+                               android:layout_weight="1"
+                               android:textColor="@color/white"
+                               android:text=""
+                               android:id="@+id/oxy_txt"
+                               android:textSize="30dp"
                                android:textStyle="bold"
-                               android:textSize="18dp"
-                               android:textColor="@color/sky"
                                />
                        </LinearLayout>
                        <TextView
-                           android:gravity="center"
+                           android:paddingHorizontal="10dp"
+                           android:textAlignment="center"
                            android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:layout_weight="1"
-                           android:textColor="@color/white"
+                           android:layout_height="wrap_content"
                            android:text=""
-                           android:id="@+id/oxy_txt"
-                           android:textSize="30dp"
-                           android:textStyle="bold"
-                           />
+                           android:id="@+id/spo2_msg"
+                           android:textColor="@color/white"
+                           android:textSize="14dp"
+                           android:textStyle="bold"/>
                    </LinearLayout>
+
 
                </androidx.cardview.widget.CardView>
                <androidx.cardview.widget.CardView
@@ -371,6 +422,14 @@
                                android:backgroundTint="@color/brown"
                                android:layout_width="wrap_content"
                                android:layout_height="wrap_content"
+                               android:text="50-60"
+                               android:layout_marginLeft="5dp"
+                               android:id="@+id/range_0_bpm"
+                               />
+                           <Button
+                               android:backgroundTint="@color/brown"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
                                android:text="60-70"
                                android:layout_marginLeft="5dp"
                                android:id="@+id/range_1_bpm"
@@ -387,7 +446,7 @@
                                android:layout_marginLeft="5dp"
                                android:layout_width="wrap_content"
                                android:layout_height="wrap_content"
-                               android:text="90-100"
+                               android:text="100-105"
                                android:id="@+id/range_3_bpm"
                                android:backgroundTint="@color/brown"
                                />
@@ -427,14 +486,14 @@
                                android:backgroundTint="@color/brown"
                                android:layout_width="wrap_content"
                                android:layout_height="wrap_content"
-                               android:text="95-96"
+                               android:text="93-95"
                                android:layout_marginLeft="5dp"
                                android:id="@+id/range_1_spo2"
                                />
                            <Button
                                android:layout_width="wrap_content"
                                android:layout_height="wrap_content"
-                               android:text="96-97"
+                               android:text="95-97"
                                android:layout_marginLeft="5dp"
                                android:id="@+id/range_2_spo2"
                                android:backgroundTint="@color/brown"

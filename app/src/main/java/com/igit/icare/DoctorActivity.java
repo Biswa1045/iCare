@@ -25,7 +25,31 @@ public class DoctorActivity extends AppCompatActivity {
         findViewById(R.id.wp1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openWhatsappContact("+918249083855");
+                openWhatsappContact("+919861103459");
+            }
+        });
+        findViewById(R.id.wp2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openWhatsappContact("+919583497812");
+            }
+        });
+        findViewById(R.id.wp3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openWhatsappContact("+919438849121");
+            }
+        });
+        findViewById(R.id.wp4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openWhatsappContact("+919861103459");
+            }
+        });
+        findViewById(R.id.wp5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openWhatsappContact("+919861103459");
             }
         });
     }

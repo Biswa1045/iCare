@@ -31,9 +31,9 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class HomeActivity extends AppCompatActivity {
     private Dialog dialog;
-
+    TextView temp_msg,spo2_msg,bpm_msg;
     Button range_1_temp,range_2_temp,range_3_temp,range_4_temp;
-    Button range_1_bpm,range_2_bpm,range_3_bpm,range_4_bpm;
+    Button range_1_bpm,range_2_bpm,range_3_bpm,range_4_bpm,range_0_bpm;
     Button range_1_spo2,range_2_spo2,range_3_spo2,range_4_spo2;
     Button stop_temp,stop_bpm,stop_spo2;
     TextView temp_txt,heart_txt,oxy_txt;
@@ -43,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
     String name,email;
     int live_value,live_value_bpm,live_value_spo2;
     String start_temp_1,start_temp_2,start_temp_3,start_temp_4="off";
-    String start_bpm_1,start_bpm_2,start_bpm_3,start_bpm_4="off";
+    String start_bpm_0,start_bpm_1,start_bpm_2,start_bpm_3,start_bpm_4="off";
     String start_spo2_1,start_spo2_2,start_spo2_3,start_spo2_4="off";
     TextView date,greetings;
     @Override
@@ -56,12 +56,14 @@ public class HomeActivity extends AppCompatActivity {
         );
         dialog = new Dialog(this);
 
-
+        temp_msg = findViewById(R.id.temp_msg);
+        spo2_msg = findViewById(R.id.spo2_msg);
+        bpm_msg = findViewById(R.id.bpm_msg);
         range_1_temp = findViewById(R.id.range_1_temp);
         range_2_temp =findViewById(R.id.range_2_temp);
         range_3_temp = findViewById(R.id.range_3_temp);
         range_4_temp = findViewById(R.id.range_4_temp);
-
+        range_0_bpm = findViewById(R.id.range_0_bpm);
         range_1_bpm = findViewById(R.id.range_1_bpm);
         range_2_bpm =findViewById(R.id.range_2_bpm);
         range_3_bpm = findViewById(R.id.range_3_bpm);
@@ -254,6 +256,26 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        range_0_bpm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start_bpm_0 = "on";
+                temp_set_timer.scheduleAtFixedRate(
+                        new TimerTask()
+                        {
+                            public void run()
+                            {
+                                if(start_bpm_0.equals("on")){
+                                    bpm_range(50,60,true);
+
+                                }
+
+                            }
+                        },
+                        0,      // run first occurrence immediatetly
+                        2000);
+            }
+        });
         range_1_bpm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -304,7 +326,7 @@ public class HomeActivity extends AppCompatActivity {
                             public void run()
                             {
                                 if(start_bpm_3.equals("on")){
-                                    bpm_range(90,100,true);
+                                    bpm_range(100,105,true);
                                 }
 
                             }
@@ -352,7 +374,7 @@ public class HomeActivity extends AppCompatActivity {
                             public void run()
                             {
                                 if(start_spo2_1.equals("on")){
-                                    oxy_range(95,96,true);
+                                    oxy_range(93,95,true);
 
                                 }
 
@@ -372,7 +394,7 @@ public class HomeActivity extends AppCompatActivity {
                             public void run()
                             {
                                 if(start_spo2_2.equals("on")){
-                                    oxy_range(96,97,true);
+                                    oxy_range(95,97,true);
                                 }
 
                             }
@@ -538,11 +560,26 @@ public class HomeActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
                     live_value = Integer.parseInt(snapshot.getValue().toString());
-                    if(live_value!=0){
+                    if(live_value<36&&live_value!=0){
                         temp_txt.setText(String.valueOf(live_value)+"°C");
-                    }else {
-                        temp_txt.setText(String.valueOf("ghg"));
+                        temp_msg.setText("Temperature is abnormally low, please consult a doctor");
+                        temp_msg.setTextColor(Color.parseColor("#ED4C51"));
+
+                    }else if(live_value>=36&&live_value<=38) {
+                        temp_txt.setText(String.valueOf(live_value)+"°C");
+                        temp_msg.setText("You are Healthy");
+                        temp_msg.setTextColor(Color.parseColor("#BDF951"));
+                    }else if(live_value>38){
+                        temp_txt.setText(String.valueOf(live_value)+"°C");
+                        temp_msg.setText("Temperature is abnormally high, please consult a doctor");
+                        temp_msg.setTextColor(Color.parseColor("#ED4C51"));
+                    }else if(live_value==0){
+                        temp_txt.setText("");
+                        temp_msg.setText("Unable to detect");
+                        temp_msg.setTextColor(Color.parseColor("#FFFFFF"));
                     }
+
+
 
 
 
@@ -565,8 +602,25 @@ public class HomeActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
                     live_value_bpm = Integer.parseInt(snapshot.getValue().toString());
-                    heart_txt.setText(String.valueOf(live_value_bpm)+"");
+                   // heart_txt.setText(String.valueOf(live_value_bpm)+"");
+                    if(live_value_bpm<60&&live_value_bpm!=0){
+                        heart_txt.setText(String.valueOf(live_value_bpm));
+                        bpm_msg.setText("Your Heart beat is very Low");
+                        bpm_msg.setTextColor(Color.parseColor("#ED4C51"));
 
+                    }else if(live_value_bpm>=60&&live_value_bpm<=80) {
+                        heart_txt.setText(String.valueOf(live_value_bpm));
+                        bpm_msg.setText("You are Healthy");
+                        bpm_msg.setTextColor(Color.parseColor("#BDF951"));
+                    }else if(live_value_bpm>80){
+                        heart_txt.setText(String.valueOf(live_value_bpm));
+                        bpm_msg.setText("Your Heart beat is very High");
+                        bpm_msg.setTextColor(Color.parseColor("#ED4C51"));
+                    }else if(live_value_bpm==0){
+                        heart_txt.setText("");
+                        bpm_msg.setText("Unable to detect");
+                        bpm_msg.setTextColor(Color.parseColor("#FFFFFF"));
+                    }
                 }
 
             }
@@ -585,8 +639,22 @@ public class HomeActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
                     live_value_spo2 = Integer.parseInt(snapshot.getValue().toString());
-                    oxy_txt.setText(String.valueOf(live_value_spo2)+"%");
+                  //  oxy_txt.setText(String.valueOf(live_value_spo2)+"%");
+                    if(live_value_spo2<95&&live_value_spo2!=0){
+                        oxy_txt.setText(String.valueOf(live_value_spo2));
+                        spo2_msg.setText("Low Oxygen level, consult a Doctor");
+                        spo2_msg.setTextColor(Color.parseColor("#ED4C51"));
 
+                    }
+                    else if(live_value_spo2>=95){
+                        oxy_txt.setText(String.valueOf(live_value_spo2));
+                        spo2_msg.setText("Normal Oxygen Level");
+                        spo2_msg.setTextColor(Color.parseColor("#BDF951"));
+                    }else if(live_value_spo2==0){
+                        oxy_txt.setText("");
+                        spo2_msg.setText("Unable to detect");
+                        spo2_msg.setTextColor(Color.parseColor("#FFFFFF"));
+                    }
                 }
 
             }
