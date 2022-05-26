@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/drawable-v24/bg_home.xml" value="0.1095" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/drawable-v24/btn.xml" value="0.1095" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/drawable/back_gradient.xml" value="0.1095" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/drawable/bg_spark.xml" value="0.1" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/drawable/bottom_sheet.xml" value="0.1095" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/drawable/ic_baseline_chevron_left_24.xml" value="0.1" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/drawable/ic_baseline_clear_24.xml" value="0.1" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.1" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/drawable/ic_baseline_history_24.xml" value="0.1" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/font/aclonica.xml" value="0.17592592592592593" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/layout/activity_doctor.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/layout/activity_history.xml" value="0.17282051282051283" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/layout/activity_home.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/layout/bottom_sheet_layout.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/layout/bottom_sheet_layout_heart.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/layout/bottom_sheet_layout_oxygen.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/biswa/pro/iCare/app/src/main/res/layout/custom_dialog.xml" value="0.13425925925925927" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
